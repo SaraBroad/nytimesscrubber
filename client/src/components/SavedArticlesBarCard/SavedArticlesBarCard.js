@@ -1,8 +1,10 @@
 import React from "react";
-import "./SearchArticlesBarCard.css"
+import "./SavedArticlesBarCard.css";
 
-const SearchArticlesBarCard = props => (
-    <div className="search-container" />
+const SavedArticlesBarCard = props => (
+    <div className="search-container">
+    <div className="header">Saved Articles</div>
+    </div>
 );
 
-export default SearchArticlesBarCard ;
+export default SavedArticlesBarCard;

@@ -5,14 +5,18 @@ import Header from "../components/Header";
 // import SearchBar from "../components/SearchBar";
 import SearchBarCard from "../components/SearchBarCard";
 import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
+import ResultsBarCard from "../components/ResultsBarCard";
 
 class Mainpage extends Component {
     render() {
         return (
             <div>
                  <Header />
-            <SearchBarCard />
+            <SearchBarCard>
+                {/* <SearchBar /> */}
+            </SearchBarCard>
             <SavedArticlesBarCard />
+            <ResultsBarCard />
              
            
            </div>
