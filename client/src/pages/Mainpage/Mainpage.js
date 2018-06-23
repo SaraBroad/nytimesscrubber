@@ -7,7 +7,7 @@ import SearchBar from "../components/SearchBar";
 class Mainpage extends Component {
     render() {
         return (
-            <p>Hello</p>
+            <Header />
         )
     }
 }
