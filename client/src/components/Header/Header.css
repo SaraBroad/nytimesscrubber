@@ -1,4 +1,15 @@
 .header-container {
     width: 800px;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+    margin-left: 300px;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 20px;
+    text-align: center;
 }
