@@ -10,6 +10,7 @@ class Mainpage extends Component {
             <Header />
             <SearchBarCard />
             <ResultsBarCard />
+            <SavedArticlesBarCard />
            </div>
         )
     }

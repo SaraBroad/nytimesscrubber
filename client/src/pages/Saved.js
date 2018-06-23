@@ -6,7 +6,7 @@ class Saved extends Component {
     render() {
         return (
             <div>
-            <SavedArticlesBarCard />
+           
            </div>
         )
     }
