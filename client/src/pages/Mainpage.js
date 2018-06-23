@@ -4,6 +4,7 @@ import Header from "../components/Header";
 // import SavedArticles from "../components/SavedArticles";
 // import SearchBar from "../components/SearchBar";
 import SearchBarCard from "../components/SearchBarCard";
+import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 
 class Mainpage extends Component {
     render() {
@@ -11,6 +12,7 @@ class Mainpage extends Component {
             <div>
                  <Header />
             <SearchBarCard />
+            <SavedArticlesBarCard />
              
            
            </div>
