@@ -34,10 +34,11 @@ const SearchBarCard = props => (
                 placeholder="End Year"
                 id="end-year"
             />
-            <button>
+            <button
                 onClick={props.handleFormSubmit}
-                type="success"
-                className="input-lg"
+                type="button"
+                className="input-lg">
+                Search
             </button> 
 
         </div>
