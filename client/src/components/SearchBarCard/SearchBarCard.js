@@ -9,7 +9,7 @@ const SearchBarCard = props => (
             <input
                 className="bar"
                 name="topic"
-                type="text"
+                onChange={props.handleInputChange}
                 className="form-control"
                 placeholder="Topic"
                 id="cust-address"
@@ -19,7 +19,7 @@ const SearchBarCard = props => (
             <input
                 className="bar"
                 name="start-year"
-                type="text"
+                onChange={props.handleInputChange}
                 className="form-control"
                 placeholder="Start Year"
                 id="start-year"
@@ -29,11 +29,16 @@ const SearchBarCard = props => (
             <input
                 className="bar"
                 name="end-year"
-                type="text"
+                onChange={props.handleInputChange}
                 className="form-control"
                 placeholder="End Year"
                 id="end-year"
             />
+            <button onCLick={onClick}>
+                onClick={this.handleFormSubmit}
+                type="success"
+                className="input-lg"
+            </button>
 
         </div>
     </div>
