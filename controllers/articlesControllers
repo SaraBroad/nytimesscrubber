@@ -1,0 +1,7 @@
+const db = require("../models/Article);
+
+module.exports = {
+//post
+//get
+//delete    
+}
