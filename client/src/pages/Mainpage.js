@@ -5,24 +5,24 @@ import ResultsBarCard from "../components/ResultsBarCard";
 import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 
 class Mainpage extends Component {
-    state = {
-        articles: [],
-        topic: "",
-        startYear: "",
-        endYear: ""
-    }
+    // state = {
+    //     articles: [],
+    //     topic: "",
+    //     startYear: "",
+    //     endYear: ""
+    // }
 
-        handleInputChange = event => {
-            const { name, value } = event.target;
-            this.setState({
-                [name]: value
-            });
-        };
+    //     handleInputChange = event => {
+    //         const { name, value } = event.target;
+    //         this.setState({
+    //             [name]: value
+    //         });
+    //     };
 
-      handleFormSubmit = event => {
-          event.preventDefault();
-          API.postArticles
-      }
+    //   handleFormSubmit = event => {
+    //       event.preventDefault();
+    //       API.postArticles
+    //   }
     
     //   handleFormSubmit = event => {
     //     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
