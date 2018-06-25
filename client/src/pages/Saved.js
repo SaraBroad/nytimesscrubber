@@ -1,15 +1,27 @@
-// import React, { Component } from 'react';
-// import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
+import React, { Component } from 'react';
+import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 
-
-// class Saved extends Component {
-//     render() {
-//         return (
-//             <div>
-           
-//            </div>
-//         )
-//     }
+// componentDidMount() {
+//     this.scrubArticles
 // }
 
-// export default Saved;
+//   getSavedArticles = () => {
+//     API.getArticles()
+//       .then(res =>
+//         this.setState({ articles: res.data, title: "", stateYear: "", endYear: "" })
+//       )
+//       .catch(err => console.log(err));
+//   };
+
+
+class Saved extends Component {
+    render() {
+        return (
+            <div>
+                <SavedArticlesBarCard />
+           </div>
+        )
+    }
+}
+
+export default Saved;
