@@ -8,28 +8,28 @@ import API from "../utils/API";
 class Mainpage extends Component {
     state = {
         articles: [],
+        savedArticles: [],
         title: "",
         startYear: "",
         endYear: ""
     }
 
-  
-
-      deleteBook = id => {
-          API.deleteArticles(id)
-          .then(res => this.getArticles())
-          .catch(err => console.log(err));
-      };
-
    //saved article
 
-      handleInputChange = event => {
-          const { name, value } = event.target;
-          this.setState({
-              [name]: value
-          });
+
+    handleTitle = (event) => {
+        this.setState({ title: event.target.value })
+    };
+
+      handleStartYear = (event) => {
+          this.setState({ startYear: event.target.value})
+      };
+
+      handleEndYear = (event) => {
+          this.setState({ endYear: event.target.value })
       };
     
+      //okay?
       handleFormSubmit = event => {
           event.preventDefault();
           API.getArticles({
@@ -37,16 +37,27 @@ class Mainpage extends Component {
               startYear: this.state.startYear,
               endYear: this.state.endYear
           })
-          .then(res => this.getArticles())
+          .then(res => this.setState({ articles: res.data}))
           .catch(err => console.log(err));
       }
-    
+
+      handleSaveButton = event => {
+
+      }
+
     render() {
         return (
             <div>
             <Header />
+
             <SearchBarCard />
+
+
+            {this.state.articles.map(article => {
             <ResultsBarCard />
+
+
+            })}
             {/* //headline
             //web_url
             //pub_date */}
@@ -55,5 +66,19 @@ class Mainpage extends Component {
         )
     }
 }
+
+{/* <RecipeList>
+                  {this.state.recipes.map(recipe => {
+                    return (
+                      <RecipeListItem
+                        key={recipe.title}
+                        title={recipe.title}
+                        href={recipe.href}
+                        ingredients={recipe.ingredients}
+                        thumbnail={recipe.thumbnail}
+                      />
+                    );
+                  })}
+                </RecipeList> */}
 
 export default Mainpage;
