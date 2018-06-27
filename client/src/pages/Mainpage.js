@@ -67,18 +67,4 @@ class Mainpage extends Component {
     }
 }
 
-{/* <RecipeList>
-                  {this.state.recipes.map(recipe => {
-                    return (
-                      <RecipeListItem
-                        key={recipe.title}
-                        title={recipe.title}
-                        href={recipe.href}
-                        ingredients={recipe.ingredients}
-                        thumbnail={recipe.thumbnail}
-                      />
-                    );
-                  })}
-                </RecipeList> */}
-
 export default Mainpage;
