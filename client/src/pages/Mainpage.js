@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from "../components/Header";
 import SearchBarCard from "../components/SearchBarCard";
 import ResultsBarCard from "../components/ResultsBarCard";
-// import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 import API from "../utils/API";
 
 class Mainpage extends Component {
