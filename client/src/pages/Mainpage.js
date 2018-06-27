@@ -14,9 +14,6 @@ class Mainpage extends Component {
         endYear: ""
     }
 
-   //saved article
-
-
     handleTitle = (event) => {
         this.setState({ title: event.target.value })
     };
@@ -37,13 +34,16 @@ class Mainpage extends Component {
               startYear: this.state.startYear,
               endYear: this.state.endYear
           })
-          .then(res => this.setState({ articles: res.data}))
+          .then(res => this.setState({ articles: res.data }))
           .catch(err => console.log(err));
+          console.log(this.state.articles);
       }
 
+      //save article
       handleSaveButton = event => {
 
       }
+
 
     render() {
         return (
@@ -52,16 +52,16 @@ class Mainpage extends Component {
 
             <SearchBarCard />
 
-
             {this.state.articles.map(article => {
-            <ResultsBarCard />
-
-
+            <ResultsBarCard 
+            id={article.id}
+            title={article.headline.main}
+            date={article.web_url}
+            url={article.pub_date}
+            // function={this.function}
+            />
             })}
-            {/* //headline
-            //web_url
-            //pub_date */}
-            {/* <SavedArticlesBarCard /> */}
+     
            </div>
         )
     }

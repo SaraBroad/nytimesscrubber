@@ -7,30 +7,27 @@ const SearchBarCard = props => (
         <div className="searches">
             <label htmlFor="topic">Topic</label>
             <input
-                className="bar"
+                className="bar form-control"
                 name="topic"
                 onChange={props.handleTitle}
-                className="form-control"
                 placeholder="Topic"
                 id="cust-address"
             />
 
             <label htmlFor="start-year">Start Year</label>
             <input
-                className="bar"
+                className="bar form-control"
                 name="start-year"
                 onChange={props.handleStartYear}
-                className="form-control"
                 placeholder="Start Year"
                 id="start-year"
             />
 
             <label htmlFor="end-year">End Year</label>
             <input
-                className="bar"
+                className="bar form-control"
                 name="end-year"
                 onChange={props.handleEndYear}
-                className="form-control"
                 placeholder="End Year"
                 id="end-year"
             />
