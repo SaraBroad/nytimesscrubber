@@ -101,12 +101,15 @@ class Mainpage extends Component {
                 <SavedBarWrapper>  
                 {this.state.savedArticles.map((savedArticle, i) => (
                     <SavedArticlesBarCard
-                        _id={savedArticle.id}
+                        _id={savedArticle._id}
                         key={i}
                         title={savedArticle.title}
                         url={savedArticle.web_url}
                         date={savedArticle.pub_date}
+                        // savedArticles={this.state.savedArticles}
+                        getSavedArticles={this.getSavedArticles}
                         deleteArticles={this.deleteArticles}
+                        
                     />
                 ))}
                 </SavedBarWrapper>
