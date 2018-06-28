@@ -31,3 +31,12 @@ label {
     margin-left: 345px;
     font-weight: bold;
 }
+.delete-btn {
+    margin-left: 385px;
+    margin-top: 10px;
+    width: 100px;
+}
+
+.saved-box {
+    border: 1px solid black;
+}
