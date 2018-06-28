@@ -1,26 +1,44 @@
-import React, { Component } from 'react';
-import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
-import API from "../utils/API";
+// import React, { Component } from 'react';
+// import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
+// import API from "../utils/API";
 
 
 
-class Saved extends Component {
-   
+// class Saved extends Component {
 
-    deleteBook = id => {
-        API.deleteArticles(id)
-            .then(res => this.getArticles())
-            .catch(err => console.log(err));
-    };
+//     componentDidMount() {
+//         this.getSavedArticles()
+//     };
 
-    render() {
-        return (
-            <div>
-                {/* getSavedArticles */}
-                <SavedArticlesBarCard />
-            </div>
-        )
-    }
-}
+//     getSavedArticles = () => {
+//         API.getSaved()
+//             .then((res) => {
+//                 this.setState({
+//                     savedArticles: res.data
+//                 });
+//             })
+//     }
 
-export default Saved;
+//     deleteArticles = id => {
+//         API.deleteArticles(id)
+//             .then(res => this.getArticles())
+//             .catch(err => console.log(err));
+//     };
+
+//     render() {
+//         return (
+//             <div>
+//                 {this.state.savedArticles.map((savedArticle, i) => (
+//                     <SavedArticlesBarCard
+//                         id={savedArticle.id}
+//                         key={i}
+//                         title={savedArticle.title}
+//                         deleteBook={this.deleteBook}
+//                     />
+//                 ))}
+//             </div>
+//         )
+//     }
+// }
+
+// export default Saved;

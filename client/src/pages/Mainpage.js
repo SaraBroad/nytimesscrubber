@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "../components/Header";
 import SearchBarCard from "../components/SearchBarCard";
 import ResultsBarCard from "../components/ResultsBarCard";
+import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 import API from "../utils/API";
 
 class Mainpage extends Component {
@@ -20,7 +21,9 @@ class Mainpage extends Component {
     getSavedArticles = () => {
         API.getSaved()
             .then((res) => {
-                this.setState({ saved: res.data });
+                this.setState({
+                    savedArticles: res.data
+                });
             })
     }
 
@@ -36,7 +39,6 @@ class Mainpage extends Component {
         this.setState({ endYear: event.target.value })
     };
 
-    //okay?
     handleFormSubmit = event => {
         event.preventDefault();
         API.getArticles(
@@ -69,7 +71,7 @@ class Mainpage extends Component {
             <div>
                 <Header />
 
-                <SearchBarCard 
+                <SearchBarCard
                     handleStartYear={this.handleStartYear}
                     handleEndYear={this.handleEndYear}
                     handleTitle={this.handleTitle}
@@ -87,6 +89,16 @@ class Mainpage extends Component {
                     />
                 ))}
 
+                  
+                {this.state.savedArticles.map((savedArticle, i) => (
+                    <SavedArticlesBarCard
+                        id={savedArticle.id}
+                        key={i}
+                        title={savedArticle.title}
+                        deleteBook={this.deleteBook}
+                    />
+                ))}
+    
             </div>
         )
     }
