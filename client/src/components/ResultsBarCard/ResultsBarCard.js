@@ -3,7 +3,7 @@ import "./ResultsBarCard.css";
 
 const ResultsBarCard = props => (
     <div className="search-container">
-        <div className="header">Results</div>
+        {/* <div className="header">Results</div> */}
         <div className="results-box">
             <div>{props.title}</div>
             <div>{props.url}</div>

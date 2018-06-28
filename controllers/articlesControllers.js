@@ -17,7 +17,7 @@ module.exports = {
             .then(dbArticle => res.json(dbArticle))
             .catch(err => res.status(422).json(err));
     },
-    delete: function (req, res) {
+    remove: function (req, res) {
         console.log("delete");
         Article
             .findById({ _id: req.params.id })

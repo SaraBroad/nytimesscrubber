@@ -19,11 +19,7 @@
 //             })
 //     }
 
-//     deleteArticles = id => {
-//         API.deleteArticles(id)
-//             .then(res => this.getArticles())
-//             .catch(err => console.log(err));
-//     };
+
 
 //     render() {
 //         return (

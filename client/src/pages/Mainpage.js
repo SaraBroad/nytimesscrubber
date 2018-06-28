@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import SearchBarCard from "../components/SearchBarCard";
 import ResultsBarCard from "../components/ResultsBarCard";
 import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
+import ResultsBarWrapper from "../components/ResultsBarWrapper";
 import API from "../utils/API";
 
 class Mainpage extends Component {
@@ -51,7 +52,6 @@ class Mainpage extends Component {
                 this.setState({ articles: res.data.response.docs });
             })
             .catch(err => console.log(err));
-        console.log(this.state.articles);
     }
 
     //   save article from results
@@ -66,6 +66,12 @@ class Mainpage extends Component {
             .then(data => this.getSavedArticles());
     }
 
+        deleteArticles = id => {
+        API.deleteArticles(id)
+            .then(res => this.getSavedArticles())
+            .catch(err => console.log(err));
+    };
+
     render() {
         return (
             <div>
@@ -78,6 +84,7 @@ class Mainpage extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                 />
 
+                <ResultsBarWrapper>
                 {this.state.articles.map((article, i) => (
                     <ResultsBarCard
                         id={article.id}
@@ -88,14 +95,16 @@ class Mainpage extends Component {
                         handleSaveButton={this.handleSaveButton}
                     />
                 ))}
-
+                </ResultsBarWrapper>
                   
                 {this.state.savedArticles.map((savedArticle, i) => (
                     <SavedArticlesBarCard
-                        id={savedArticle.id}
+                        _id={savedArticle.id}
                         key={i}
                         title={savedArticle.title}
-                        deleteBook={this.deleteBook}
+                        url={savedArticle.web_url}
+                        date={savedArticle.pub_date}
+                        deleteArticles={this.deleteArticles}
                     />
                 ))}
     
