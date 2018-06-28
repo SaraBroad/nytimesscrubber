@@ -4,6 +4,7 @@ import SearchBarCard from "../components/SearchBarCard";
 import ResultsBarCard from "../components/ResultsBarCard";
 import SavedArticlesBarCard from "../components/SavedArticlesBarCard";
 import ResultsBarWrapper from "../components/ResultsBarWrapper";
+import SavedBarWrapper from "../components/SavedBarWrapper";
 import API from "../utils/API";
 
 class Mainpage extends Component {
@@ -97,6 +98,7 @@ class Mainpage extends Component {
                 ))}
                 </ResultsBarWrapper>
                   
+                <SavedBarWrapper>  
                 {this.state.savedArticles.map((savedArticle, i) => (
                     <SavedArticlesBarCard
                         _id={savedArticle.id}
@@ -107,7 +109,7 @@ class Mainpage extends Component {
                         deleteArticles={this.deleteArticles}
                     />
                 ))}
-    
+                </SavedBarWrapper>
             </div>
         )
     }
