@@ -13,55 +13,81 @@ class Mainpage extends Component {
         endYear: ""
     }
 
+    componentDidMount() {
+        this.getSavedArticles()
+    };
+
+    getSavedArticles = () => {
+        API.getSaved()
+            .then((res) => {
+                this.setState({ saved: res.data });
+            })
+    }
+
     handleTitle = (event) => {
         this.setState({ title: event.target.value })
     };
 
-      handleStartYear = (event) => {
-          this.setState({ startYear: event.target.value})
-      };
+    handleStartYear = (event) => {
+        this.setState({ startYear: event.target.value })
+    };
 
-      handleEndYear = (event) => {
-          this.setState({ endYear: event.target.value })
-      };
-    
-      //okay?
-      handleFormSubmit = event => {
-          event.preventDefault();
-          API.getArticles({
-              title: this.state.title,
-              startYear: this.state.startYear,
-              endYear: this.state.endYear
-          })
-          .then(res => this.setState({ articles: res.data }))
-          .catch(err => console.log(err));
-          console.log(this.state.articles);
-      }
+    handleEndYear = (event) => {
+        this.setState({ endYear: event.target.value })
+    };
 
-      //save article
-      handleSaveButton = event => {
+    //okay?
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.getArticles(
+            this.state.title,
+            this.state.startYear,
+            this.state.endYear
+        )
+            .then(res => {
+                console.log(res);
+                this.setState({ articles: res.data.response.docs });
+            })
+            .catch(err => console.log(err));
+        console.log(this.state.articles);
+    }
 
-      }
-
+    //   save article from results
+    handleSaveButton = id => {
+        const articleSaving = this.state.articles.find(article => article.id === id);
+        let newArticle = {
+            title: articleSaving.headline.main,
+            date: articleSaving.pub_date,
+            url: articleSaving.web_url
+        }
+        API.saveArticle(newArticle)
+            .then(data => this.getSavedArticles());
+    }
 
     render() {
         return (
             <div>
-            <Header />
+                <Header />
 
-            <SearchBarCard />
+                <SearchBarCard 
+                    handleStartYear={this.handleStartYear}
+                    handleEndYear={this.handleEndYear}
+                    handleTitle={this.handleTitle}
+                    handleFormSubmit={this.handleFormSubmit}
+                />
 
-            {this.state.articles.map(article => {
-            <ResultsBarCard 
-            id={article.id}
-            title={article.headline.main}
-            date={article.web_url}
-            url={article.pub_date}
-            // function={this.function}
-            />
-            })}
-     
-           </div>
+                {this.state.articles.map((article, i) => (
+                    <ResultsBarCard
+                        id={article.id}
+                        key={i}
+                        title={article.headline.main}
+                        url={article.web_url}
+                        date={article.pub_date}
+                        handleSaveButton={this.handleSaveButton}
+                    />
+                ))}
+
+            </div>
         )
     }
 }

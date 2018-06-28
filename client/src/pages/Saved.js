@@ -5,17 +5,7 @@ import API from "../utils/API";
 
 
 class Saved extends Component {
-    componentDidMount() {
-        this.getSavedArticles()
-    };
-
-    getSavedArticles = () => {
-        API.getSaved()
-            .then((res) => {
-                this.setState({ saved: res.data });
-            })
-    }
-
+   
 
     deleteBook = id => {
         API.deleteArticles(id)
@@ -26,6 +16,7 @@ class Saved extends Component {
     render() {
         return (
             <div>
+                {/* getSavedArticles */}
                 <SavedArticlesBarCard />
             </div>
         )

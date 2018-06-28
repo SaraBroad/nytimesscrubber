@@ -2,6 +2,7 @@ import axios from "axios";
 const apiKey = "5d7640653b3b4acab5beec69a66e0904";
 export default {
     getArticles: function (title, startYear, endYear) {
+        console.log(title, startYear, endYear);
         const queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
             apiKey + "&q=" + title + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
         return axios.get(queryURL);
