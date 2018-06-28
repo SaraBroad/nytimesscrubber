@@ -2,7 +2,7 @@ import React from "react";
 import "./ResultsBarCard.css";
 
 const ResultsBarCard = props => (
-    <div className="search-container">
+    <div className="results-container">
         {/* <div className="header">Results</div> */}
         <div className="results-box">
             <div>{props.title}</div>

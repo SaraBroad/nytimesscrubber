@@ -1,7 +1,6 @@
-.search-container {
+.results-container {
     width: 800px;
     border: 1px solid black;
-    margin-right: 300px;
 }
 
 .header {
@@ -9,13 +8,6 @@
     font-size: 30px;
     border-bottom: 2px solid black;
 }
-
-.results-box {
-    width: 700px;
-    width: 100%;
-    border: 1px solid black;
-}
-
 .save-btn {
     width: 200px;
 }
