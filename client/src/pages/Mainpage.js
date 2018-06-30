@@ -57,7 +57,7 @@ class Mainpage extends Component {
 
     //   save article from results
     handleSaveButton = id => {
-        const articleSaving = this.state.articles.find(article => article.id === id);
+        const articleSaving = this.state.articles.find(article => article._id === id);
         let newArticle = {
             title: articleSaving.headline.main,
             date: articleSaving.pub_date,
@@ -88,7 +88,7 @@ class Mainpage extends Component {
                 <ResultsBarWrapper>
                 {this.state.articles.map((article, i) => (
                     <ResultsBarCard
-                        id={article.id}
+                        id={article._id}
                         key={i}
                         title={article.headline.main}
                         url={article.web_url}

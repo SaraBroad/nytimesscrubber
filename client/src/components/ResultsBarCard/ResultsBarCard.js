@@ -8,7 +8,7 @@ const ResultsBarCard = props => (
             <div>{props.title}</div>
             <div>{props.url}</div>
             <div>{props.date}</div>
-            <button className="btn btn-primary save-btn" onClick={() => props.handleSaveButton(props._id)}>Save Article</button>
+            <button className="btn btn-primary save-btn" onClick={() => props.handleSaveButton(props.id)}>Save Article</button>
         </div>
     </div>
 );
